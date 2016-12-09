@@ -1,0 +1,20 @@
+require_once('lib/age.php');
+
+$age='';
+$siswa = new Siswa();
+$hitungAge = new Age($age);
+
+		<td>
+			<?php
+				$tanggal = $a['date_ob'];
+			
+				if($tanggal == '0000-00-00'){
+					echo '<p style="color:red;">Data lahir tidak valid</p>';
+				}elseif(!empty($tanggal)){
+				$exec = $hitungAge->Age($tanggal);
+				echo $exec->y."tahun ".$exec->m." Bulan ".$exec->d."hari";
+				}else{
+					echo '<p style="color:red;">Data lahir tidak valid</p>';
+				}
+			?>
+		</td>
